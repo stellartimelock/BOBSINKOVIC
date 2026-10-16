@@ -20,3 +20,14 @@ picture img{display:block;width:100%;height:auto}
 @media(min-width:700px){.herogrid{grid-template-columns:1fr 240px}.portrait{max-width:none}}
 .banner img{border-radius:14px;margin-bottom:16px;aspect-ratio:16/7;object-fit:cover}
 .bandgrid{display:block;max-width:520px;margin:16px auto}.bandgrid img{border-radius:12px}
+/* v7 header */
+.topbanner img{display:block;width:100%;height:clamp(140px,24vw,280px);object-fit:cover;object-position:center 40%}
+.hero{background:var(--bg);color:var(--ink);padding:28px 0 40px}
+.hero .lead{opacity:1;color:var(--muted)}
+.hero .btn{border-color:#14202e33;color:var(--ink)}.hero .btn.primary{color:#14202e}
+.herogrid{grid-template-columns:1fr}
+.portrait{max-width:200px}
+@media(min-width:700px){.herogrid{grid-template-columns:200px 1fr;gap:32px}.portrait{max-width:none}}
+.topbanner img{object-position:center 75%}
+.feature{margin-top:0}
+.hero{padding-bottom:24px}
