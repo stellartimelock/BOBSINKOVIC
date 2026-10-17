@@ -48,3 +48,9 @@ form .btn{border:0;cursor:pointer;font:inherit;margin-top:6px}.opt{font-weight:4
 html{scroll-behavior:smooth}
 .cta{margin:18px 0 4px}.btn.big{display:inline-block;font-size:1.2rem;padding:14px 28px;text-decoration:none}
 #contact{scroll-margin-top:16px}
+/* v12 buttons */
+.btns{gap:10px}
+.hero .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;font-weight:600;text-decoration:none;border:2px solid var(--gold);border-radius:999px;white-space:nowrap}
+.hero .btn:not(.primary){background:#fff;color:var(--ink)}
+.hero .btn:hover{filter:brightness(.95)}
+@media(max-width:520px){.btns .btn{flex:1 1 calc(50% - 10px)}.btns .btn.primary{flex-basis:100%}}
