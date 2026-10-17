@@ -65,3 +65,4 @@ form .btn{margin-top:8px;font-size:1rem;padding:12px 28px}
 /* footer */
 footer{border-top:1px solid var(--line);background:rgba(0,0,0,.35);color:var(--muted);padding:28px 0;text-align:center;font-size:.88rem;margin-top:48px}
 .social{display:flex;gap:22px;justify-content:center;margin-bottom:8px}.social a{color:var(--gold2);text-decoration:none;font-weight:600;letter-spacing:.04em}
+.pmedia.black{background:#000}
