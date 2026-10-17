@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Bob Sinkovic | RWS Financial Services · Good Mix Music</title>
 <meta name="description" content="Bob Sinkovic — tax preparation at RWS Financial Services in Parma, Ohio, and founder/bassist of Good Mix Music.">
-<link rel="stylesheet" href="style.css?v=8"></head><body>
+<link rel="stylesheet" href="style.css?v=9"></head><body>
 <div class="topbanner"><picture class="tb"><source srcset="img/stage.webp" type="image/webp"><img src="img/stage.jpg" alt="Good Mix Music performing live on stage under colorful lights with the GM logo" width="1400" height="812"></picture></div>
 <header class="hero"><div class="wrap herogrid"><picture class="portrait"><source srcset="img/bob.webp" type="image/webp"><img src="img/bob.jpg" alt="Bob Sinkovic smiling in a leather wingback chair" width="600" height="800"></picture><div>
 <p class="eyebrow">Parma, Ohio</p><h1>Bob Sinkovic</h1>
@@ -50,11 +50,12 @@
 <script>
 (function(){var f=document.getElementById('cform'),st=document.getElementById('cstatus');
 var fallback='Sorry, the form isn\u2019t available right now. Please email <a href="mailto:robertwsinkovic@yahoo.com">robertwsinkovic@yahoo.com</a> or call <a href="tel:+14408887870">(440) 888-7870</a>.';
+function fail(){st.className='cmsg warn';st.innerHTML=fallback;st.scrollIntoView({behavior:'smooth',block:'center'});}
 f.addEventListener('submit',function(e){e.preventDefault();if(!f.checkValidity()){f.reportValidity();return;}
-st.textContent='Sending…';var b=f.querySelector('button');b.disabled=true;
+st.className='cmsg info';st.textContent='Sending…';var b=f.querySelector('button');b.disabled=true;
 fetch('/api/contact',{method:'POST',body:new FormData(f)}).then(function(r){return r.json().then(function(j){return {ok:r.ok&&j.ok}}).catch(function(){return {ok:false}})})
-.then(function(r){if(r.ok){st.textContent='Thanks! Your message was sent. Bob will get back to you soon.';f.reset();}else{st.innerHTML=fallback;}})
-.catch(function(){st.innerHTML=fallback;}).finally(function(){b.disabled=false;});});})();
+.then(function(r){if(r.ok){var box=document.createElement('div');box.className='cmsg ok';box.setAttribute('role','status');box.textContent='\u2714 Thanks! Your message was sent. Bob will get back to you soon.';f.replaceWith(box);box.scrollIntoView({behavior:'smooth',block:'center'});}else{fail();}})
+.catch(fail).finally(function(){b.disabled=false;});});})();
 </script>
 </main>
 <footer><div class="wrap"><nav class="social">
