@@ -2,7 +2,7 @@
 <title>Bob Sinkovic | RWS Financial Services · Good Mix Music</title>
 <meta name="description" content="Bob Sinkovic — tax preparation at RWS Financial Services in Parma, Ohio, and founder/bassist of Good Mix Music.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="style.css?v=17"></head><body>
+<link rel="stylesheet" href="style.css?v=18"></head><body>
 <div class="topbanner"><picture class="tb"><source srcset="img/stage.webp" type="image/webp"><img src="img/stage.jpg" alt="Good Mix Music performing live on stage under colorful lights with the GM logo" width="1400" height="812"></picture></div>
 <header class="hero"><div class="wrap herogrid"><picture class="portrait"><source srcset="img/bob.webp" type="image/webp"><img src="img/bob.jpg" alt="Bob Sinkovic smiling in a leather wingback chair" width="600" height="800"></picture><div>
 <p class="eyebrow">Parma, Ohio</p><h1>Bob Sinkovic</h1>
@@ -59,5 +59,11 @@ fetch('/api/contact',{method:'POST',body:new FormData(f)}).then(function(r){retu
 <a href="https://www.facebook.com/robertw.sinkovic" target="_blank" rel="noopener">Facebook</a>
 <a href="https://www.youtube.com/@GoodMixBand" target="_blank" rel="noopener">YouTube</a>
 <a href="https://www.linkedin.com/in/robert-sinkovic-8a631a9" target="_blank" rel="noopener">LinkedIn</a></nav>
-<p>© 2026 Bob Sinkovic · RWS Financial Services, Inc. · Parma, OH</p></div></footer>
+<p>© 2026 Bob Sinkovic · RWS Financial Services, Inc. · Parma, OH</p><p id="views" class="views" hidden></p></div></footer>
+<script>
+(function(){var el=document.getElementById('views');if(!el||!window.fetch)return;
+var k='bs_viewed',m='GET';try{if(!sessionStorage.getItem(k)){m='POST';sessionStorage.setItem(k,'1');}}catch(e){}
+fetch('/api/views',{method:m,cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){
+if(j&&j.ok&&typeof j.count==='number'&&j.count>0){el.textContent=j.count.toLocaleString('en-US')+(j.count===1?' view':' views');el.hidden=false;}}).catch(function(){});})();
+</script>
 </body></html>
