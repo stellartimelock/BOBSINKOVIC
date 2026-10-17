@@ -31,3 +31,11 @@ picture img{display:block;width:100%;height:auto}
 .topbanner img{object-position:center 75%}
 .feature{margin-top:0}
 .hero{padding-bottom:24px}
+/* v8 */
+.featured{margin-top:8px}.fbvid{max-width:860px}.fbfallback{margin:12px 0 0}
+#contact{margin:40px 0}form label{display:block;font-weight:600;font-size:.95rem;margin:10px 0}
+form input,form textarea{display:block;width:100%;margin-top:4px;padding:10px 12px;border:1px solid #c9ced4;border-radius:8px;font:inherit;background:#fff}
+form input:focus,form textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+form .btn{border:0;cursor:pointer;font:inherit;margin-top:6px}.opt{font-weight:400;color:var(--muted)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#cstatus{min-height:1.4em;margin:10px 0 0}

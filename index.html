@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Bob Sinkovic | RWS Financial Services · Good Mix Music</title>
 <meta name="description" content="Bob Sinkovic — tax preparation at RWS Financial Services in Parma, Ohio, and founder/bassist of Good Mix Music.">
-<link rel="stylesheet" href="style.css?v=7"></head><body>
+<link rel="stylesheet" href="style.css?v=8"></head><body>
 <div class="topbanner"><picture class="tb"><source srcset="img/stage.webp" type="image/webp"><img src="img/stage.jpg" alt="Good Mix Music performing live on stage under colorful lights with the GM logo" width="1400" height="812"></picture></div>
 <header class="hero"><div class="wrap herogrid"><picture class="portrait"><source srcset="img/bob.webp" type="image/webp"><img src="img/bob.jpg" alt="Bob Sinkovic smiling in a leather wingback chair" width="600" height="800"></picture><div>
 <p class="eyebrow">Parma, Ohio</p><h1>Bob Sinkovic</h1>
@@ -9,13 +9,16 @@
 <div class="btns"><a class="btn primary" href="tel:+14408887870">Call (440) 888-7870</a><a class="btn" href="#music">Watch the band</a></div>
 </div></div></header>
 <main class="wrap">
+<section id="featured" class="featured"><h2>Featured Video</h2>
+<div class="vid fbvid"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Frobertw.sinkovic%2Fvideos%2F1424444069882044%2F&show_text=false&width=1280" title="Featured video from Bob Sinkovic on Facebook" loading="lazy" scrolling="no" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<p class="fbfallback"><a class="btn primary" href="https://www.facebook.com/robertw.sinkovic/videos/1424444069882044/" target="_blank" rel="noopener">▶ Watch on Facebook</a></p></section>
 <section id="tax" class="card feature">
 <h2>RWS Financial Services, Inc.</h2>
 <p>Personal tax preparation, accounting &amp; bookkeeping, done fast and done right.</p>
 <blockquote>“Bob has always done a fantastic job with my taxes! Within 30 minutes my taxes are done, signed and filed. He's a good guy who knows his stuff.”<cite>— Scott F., 5★ review</cite></blockquote>
 <div class="grid2">
-<div><h3>Visit</h3><p>2355 W. Pleasant Valley Rd<br>Parma, OH 44134</p><p><a href="https://www.google.com/maps/search/?api=1&query=2355+W+Pleasant+Valley+Rd+Parma+OH+44134" target="_blank" rel="noopener">Get directions →</a></p></div>
-<div><h3>Hours</h3><p>Mon–Sat 8 AM – 5 PM<br>Sunday closed</p><p><a href="tel:+14408887870">(440) 888-7870</a></p></div>
+<div><h3>Contact</h3><p>Parma, OH</p><p><a href="tel:+14408887870">(440) 888-7870</a><br><a href="mailto:robertwsinkovic@yahoo.com">robertwsinkovic@yahoo.com</a></p><p><a href="#contact">Send a message →</a></p></div>
+<div><h3>Hours</h3><p>Mon–Sat 8 AM – 5 PM<br>Sunday closed</p></div>
 </div></section>
 <section id="story"><h2>The Story</h2><p>Bob has deep roots in Cleveland's Christian music scene. As a young man he played bass in the contemporary Christian rock band Fireworks (<em>Live Fireworks</em>, 1980). He went on to promote events and open local businesses, including The New Orleans Showboat restaurant. Today he prepares taxes at RWS Financial Services and leads the 12-piece Good Mix Music band.</p></section>
 <section id="music"><h2>Good Mix Music</h2>
@@ -34,6 +37,25 @@
 <div class="card"><h3>Christian Music Recordings</h3><p>His album credits include Fireworks: <em>Shatter the Darkness</em> (1979, songwriter &amp; bass) and <em>Live Fireworks</em> (1980), Amy Grant: <em>My Father's Eyes</em> (1979), and John &amp; Vickijo Witty: <em>Family Portrait</em> (1980).</p></div>
 
 </div></section>
+<section id="contact" class="card"><h2>Get in Touch</h2>
+<p>Questions about taxes, booking Good Mix Music, or anything else? Call <a href="tel:+14408887870">(440) 888-7870</a>, email <a href="mailto:robertwsinkovic@yahoo.com">robertwsinkovic@yahoo.com</a>, or send a message below.</p>
+<form id="cform" action="/api/contact" method="post" novalidate>
+<div class="grid2"><label>Name<input name="name" required maxlength="100" autocomplete="name"></label>
+<label>Email<input name="email" type="email" required maxlength="150" autocomplete="email"></label></div>
+<label>Phone <span class="opt">(optional)</span><input name="phone" type="tel" maxlength="40" autocomplete="tel"></label>
+<label>Message<textarea name="message" rows="4" required maxlength="4000"></textarea></label>
+<label class="hp" aria-hidden="true">Leave blank<input name="website" tabindex="-1" autocomplete="off"></label>
+<button class="btn primary" type="submit">Send message</button>
+<p id="cstatus" role="status"></p></form></section>
+<script>
+(function(){var f=document.getElementById('cform'),st=document.getElementById('cstatus');
+var fallback='Sorry, the form isn\u2019t available right now. Please email <a href="mailto:robertwsinkovic@yahoo.com">robertwsinkovic@yahoo.com</a> or call <a href="tel:+14408887870">(440) 888-7870</a>.';
+f.addEventListener('submit',function(e){e.preventDefault();if(!f.checkValidity()){f.reportValidity();return;}
+st.textContent='Sending…';var b=f.querySelector('button');b.disabled=true;
+fetch('/api/contact',{method:'POST',body:new FormData(f)}).then(function(r){return r.json().then(function(j){return {ok:r.ok&&j.ok}}).catch(function(){return {ok:false}})})
+.then(function(r){if(r.ok){st.textContent='Thanks! Your message was sent. Bob will get back to you soon.';f.reset();}else{st.innerHTML=fallback;}})
+.catch(function(){st.innerHTML=fallback;}).finally(function(){b.disabled=false;});});})();
+</script>
 </main>
 <footer><div class="wrap"><nav class="social">
 <a href="https://www.facebook.com/robertw.sinkovic" target="_blank" rel="noopener">Facebook</a>
