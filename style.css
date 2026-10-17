@@ -44,3 +44,4 @@ form .btn{border:0;cursor:pointer;font:inherit;margin-top:6px}.opt{font-weight:4
 .cmsg.ok{background:#e7f6ec;border-color:#2e8b57;color:#1d5e3a}
 .cmsg.warn{background:#fff4dc;border-color:#d99a1a;color:#7a4d00}.cmsg.warn a{color:#7a4d00}
 .cmsg.info{background:#eef2f6;border-color:#c9d3dd;color:var(--ink);font-size:1.15rem}
+.cmsg{overflow-wrap:anywhere}
