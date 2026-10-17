@@ -66,3 +66,5 @@ form .btn{margin-top:8px;font-size:1rem;padding:12px 28px}
 footer{border-top:1px solid var(--line);background:rgba(0,0,0,.35);color:var(--muted);padding:28px 0;text-align:center;font-size:.88rem;margin-top:48px}
 .social{display:flex;gap:22px;justify-content:center;margin-bottom:8px}.social a{color:var(--gold2);text-decoration:none;font-weight:600;letter-spacing:.04em}
 .pmedia.black{background:#000}
+.pmedia.vidbox{position:relative}.pmedia.vidbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+a.pmedia picture,a.pmedia picture img{display:block;width:100%;height:100%}a.pmedia img{object-fit:cover}
